@@ -14,3 +14,25 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+- Create new Vite+react project
+- remove unnecessary code
+- install tailwind css
+- setup daisy Ui
+- Add navabar component
+
+- install react-router
+- create browserrouter> routes > route
+- added children components in aprent route
+- outlet in Body component
+- footer component
+
+Body
+ NavBar
+ Route="/"- feed
+ Route="/login"- Login
+ Route="/profile"- Profile
+ Route="/connections"- Connections
+
+ Footer
