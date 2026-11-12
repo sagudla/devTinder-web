@@ -36,3 +36,13 @@ Body
  Route="/connections"- Connections
 
  Footer
+
+
+ - Login card and API hit and navigating to feed component.(useNavigate() hook from react-router)
+ - Cors middleware with Origin and credentials options to capture cookies in browser/clinet side
+ - Axios for API calls
+ - moved components to componets folder
+ - created utils folder and keep base url constant
+ - configure appStore and create userSlice to handle user data (@reduxjs/toolkit)
+ - Provided the store to entire APP using Provider.(react-redux)
+ - Dispatching action after successfull login and caturing the data in Navbar component to show/hide profile icon and displaying the user firstName(react-redux, useDispatch and useSelector hooks)
