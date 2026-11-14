@@ -64,3 +64,23 @@ Body
 - Signup implimentaion
 - Same form for Login and signup
 - Some testing E2E.
+
+# Deployment
+- Crate aws account
+- EC2 instance and perm key 
+- connect through SSH
+- chmod 400 "devTinder-secret.pem" (for windows it will change)
+- icacls "devTinder-secret.pem" /inheritance:r
+- icacls "devTinder-secret.pem" /grant:r "$($env:USERNAME):(R)"
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-54-66-207-23.ap-southeast-2.compute.amazonaws.com
+- Install node using nvm (download the same version as in our local)
+- git clone
+  # Frontend
+   - npm install
+   - npm run build
+   - sudo apt update
+   - sudo apt install nginx
+   - start and enable nginx sudo systemctl start nginx && sudo systemctl enable nginx
+   - copy dist/* to /var/www/html
+   - sudo scp -r dist/* /var/www/html
+   - Enable port :80 of your instance to make it work
