@@ -55,3 +55,7 @@ Body
 - new component user card for feed (props drilling)
 - new component edit profile for profile editing and props drilling to sync user card along with edit
 - save profile toast added.
+
+- Connections and requests slice added
+- Connections and Requests cards and route added in menu
+- Accepted/rejeected (review request) for connection requests implemenetd.
