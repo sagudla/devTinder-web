@@ -46,3 +46,12 @@ Body
  - configure appStore and create userSlice to handle user data (@reduxjs/toolkit)
  - Provided the store to entire APP using Provider.(react-redux)
  - Dispatching action after successfull login and caturing the data in Navbar component to show/hide profile icon and displaying the user firstName(react-redux, useDispatch and useSelector hooks)
+
+
+- logout implementation
+- fetching profile data to stay on same page if reloaded after login since token exists and state become null.
+- Navigating to login if try to avigate to other route without login.
+- create feed slice 
+- new component user card for feed (props drilling)
+- new component edit profile for profile editing and props drilling to sync user card along with edit
+- save profile toast added.
