@@ -53,18 +53,14 @@ const EditProfile = ({user}) => {
                             <legend className="fieldset-legend">Photo Url</legend>
                             <input type="text" id="photo" className="input w-full my-1" value={photoUrl} onChange={(event) => setPhotoUrl(event.target.value)}/>
                         </fieldset>
-                        {age && gender &&
-                        <div>
-                                <fieldset className="fieldset my-2">
-                                    <legend className="fieldset-legend">Gender</legend>
-                                    <input type="text" id="gender" className="input w-full my-1" value={gender} onChange={(event) => setGender(event.target.value)}/>
-                                </fieldset>
-                                <fieldset className="fieldset my-2">
-                                    <legend className="fieldset-legend">Age</legend>
-                                    <input type="text" id="age" className="input w-full my-1" value={age} onChange={(event) => setAge(event.target.value)}/>
-                                </fieldset>
-                            </div>
-                        }
+                        <fieldset className="fieldset my-2">
+                            <legend className="fieldset-legend">Gender</legend>
+                            <input type="text" id="gender" className="input w-full my-1" value={gender} onChange={(event) => setGender(event.target.value)}/>
+                        </fieldset>
+                        <fieldset className="fieldset my-2">
+                            <legend className="fieldset-legend">Age</legend>
+                            <input type="text" id="age" className="input w-full my-1" value={age} onChange={(event) => setAge(event.target.value)}/>
+                        </fieldset>
                         <fieldset className="fieldset my-2">
                             <legend className="fieldset-legend">About</legend>
                             <input type="text" id="about" className="input w-full my-1" value={about} onChange={(event) => setAbout(event.target.value)}/>

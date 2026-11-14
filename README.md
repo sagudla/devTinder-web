@@ -59,3 +59,8 @@ Body
 - Connections and requests slice added
 - Connections and Requests cards and route added in menu
 - Accepted/rejeected (review request) for connection requests implemenetd.
+
+- ignore/interested(send connection request) implemented
+- Signup implimentaion
+- Same form for Login and signup
+- Some testing E2E.

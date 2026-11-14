@@ -7,7 +7,7 @@ import RequestsCard from "./RequestsCard";
 
 
 const Requests = () => {
-  const requests =  useSelector(state => state.requests);
+  const requests =  useSelector(store => store.requests);
   const dispatch = useDispatch();
 
   const getRequests = async () => {
