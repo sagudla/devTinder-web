@@ -72,7 +72,7 @@ Body
 - chmod 400 "devTinder-secret.pem" (for windows it will change)
 - icacls "devTinder-secret.pem" /inheritance:r
 - icacls "devTinder-secret.pem" /grant:r "$($env:USERNAME):(R)"
-- ssh -i "devTinder-secret.pem" ubuntu@ec2-54-66-207-23.ap-southeast-2.compute.amazonaws.com (this will chnage if we stop the instance)
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-13-238-143-116.ap-southeast-2.compute.amazonaws.com (this will chnage if we stop the instance)
 - Install node using nvm (download the same version as in our local)
 - git clone
   # Frontend
@@ -107,3 +107,26 @@ Body
     in nginx uisng this command sudo nano /etc/nginx/sites-available/default and reload sudo systemctl reload nginx
 
   - Change BASE_URLto /api in frontend
+  - Do git pull and run npm run build
+  copy dist folder to /var/www/html (suso scp -r dist/* /var/www/html)
+
+
+
+
+  You can get the exact SSH command directly from the AWS EC2 Console by selecting your instance and clicking the "Connect" button.
+
+Step-by-Step in AWS Console
+
+1. Log in to the AWS Management Console and open the EC2 Dashboard.
+2. Click Instances in the left sidebar and check the box next to your running instance.
+3. Click the Connect button at the top right.
+4. Switch to the SSH client tab.
+
+# custom domain name
+- Purchase domain for godaddy(not mandatory)
+- signup to cluodfare for dns management
+- Add domain in cloufare it will give new nameservers
+- Update the neameservers in go daddy with cloudfare nameservers
+- It will take some time in cloudfare to complete the update 
+- Map your instance IP address to devtinder A DNS record
+- Configure SSL certificate and flexibile and redirect to https
