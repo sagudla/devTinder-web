@@ -72,7 +72,7 @@ Body
 - chmod 400 "devTinder-secret.pem" (for windows it will change)
 - icacls "devTinder-secret.pem" /inheritance:r
 - icacls "devTinder-secret.pem" /grant:r "$($env:USERNAME):(R)"
-- ssh -i "devTinder-secret.pem" ubuntu@ec2-54-66-207-23.ap-southeast-2.compute.amazonaws.com
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-54-66-207-23.ap-southeast-2.compute.amazonaws.com (this will chnage if we stop the instance)
 - Install node using nvm (download the same version as in our local)
 - git clone
   # Frontend
@@ -84,3 +84,26 @@ Body
    - copy dist/* to /var/www/html
    - sudo scp -r dist/* /var/www/html
    - Enable port :80 of your instance to make it work
+  # Banckend
+   - allow EC2 public IP on mongodb server
+   - enable port 7777 in instance to run db
+   - install pm2 (npm install pm2 -g)
+   - pm2 start npm --start
+     - Frontend - 13.238.143.116
+     - backend- 13.238.143.116:7777 will chnage this to 13.238.143.116/api using ngnix proxy pass
+
+     add server: 13.238.143.116 and below config
+     location /api/ {
+        proxy_pass http://localhost:7777/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+    in nginx uisng this command sudo nano /etc/nginx/sites-available/default and reload sudo systemctl reload nginx
+
+  - Change BASE_URLto /api in frontend
